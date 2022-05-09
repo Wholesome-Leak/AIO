@@ -1,0 +1,11 @@
+costura.autoupdater.net.dll.compressed|1.6.4.0|AutoUpdater.NET, Version=1.6.4.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc|AutoUpdater.NET.dll|1E08ABB09AC95A70913647847496B86F60891725
+costura.autoupdater.net.pdb.compressed|||AutoUpdater.NET.pdb|6AE33D8D82042AD074C438B28B3C1FE1D6071FD5
+costura.costura.dll.compressed|5.0.2.0|Costura, Version=5.0.2.0, Culture=neutral, PublicKeyToken=null|Costura.dll|DC4B6E415DF4BAFDA5C2A6228D465D64383A8DAF
+costura.costura.pdb.compressed|||Costura.pdb|51DBB96092007F8A2F4551B197DA996E4B48C217
+costura.marssettingsgui.dll.compressed|1.0.0.0|MarsSettingsGUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null|MarsSettingsGUI.dll|17E66CD04FC3703E02512E5CEA8BF5C4A2960A83
+costura.system.buffers.dll.compressed|4.0.3.0|System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51|System.Buffers.dll|2F410A0396BC148ED533AD49B6415FB58DD4D641
+costura.system.diagnostics.diagnosticsource.dll.compressed|5.0.0.1|System.Diagnostics.DiagnosticSource, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51|System.Diagnostics.DiagnosticSource.dll|85078D8F2C8A9051F3BE278BF13DB8E4E6C598AB
+costura.system.memory.dll.compressed|4.0.1.1|System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51|System.Memory.dll|19BF79600B716523B5317B9A7B68760AE5D55741
+costura.system.numerics.vectors.dll.compressed|4.1.4.0|System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a|System.Numerics.Vectors.dll|3D216458740AD5CB05BC5F7C3491CDE44A1E5DF0
+costura.system.runtime.compilerservices.unsafe.dll.compressed|5.0.0.0|System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a|System.Runtime.CompilerServices.Unsafe.dll|BAB44612721C3DC91AC3D9DFCA7C961A3A511508
+costura.wmanager.dll.compressed|1.0.0.26570|wManager, Version=1.0.0.26570, Culture=neutral, PublicKeyToken=null|wManager.dll|A071A3FE103BBD2CB23FA80B2EBDA1706B6F841D

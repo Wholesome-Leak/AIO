@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{D15EE94A-A9FE-45E4-88FC-A0FCEAEAA153}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AIO</RootNamespace>
+    <AssemblyName>AIO</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MarsSettingsGUI" />
+    <Reference Include="MemoryRobot" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="robotManager" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="wManager" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="-Module-.cs" />
+    <Compile Include="AIO_ProcessedByFody.cs" />
+    <Compile Include="BossList.cs" />
+    <Compile Include="Combat\Addons\AutoBackpedal.cs" />
+    <Compile Include="Combat\Addons\AutoPartyResurrect.cs" />
+    <Compile Include="Combat\Addons\PetAutoTarget.cs" />
+    <Compile Include="Combat\Addons\RangedPull.cs" />
+    <Compile Include="Combat\Addons\SlowLuaCaching.cs" />
+    <Compile Include="Combat\Common\BaseCombatClass.cs" />
+    <Compile Include="Combat\Common\BaseRotation.cs" />
+    <Compile Include="Combat\Common\ConditionalCycleable.cs" />
+    <Compile Include="Combat\Common\DeferredCycleable.cs" />
+    <Compile Include="Combat\Common\ICycleable.cs" />
+    <Compile Include="Combat\DeathKnight\Blood.cs" />
+    <Compile Include="Combat\DeathKnight\Buffs.cs" />
+    <Compile Include="Combat\DeathKnight\DeathKnightBehavior.cs" />
+    <Compile Include="Combat\DeathKnight\Frost.cs" />
+    <Compile Include="Combat\DeathKnight\Unholy.cs" />
+    <Compile Include="Combat\DeathKnight\UnholyPVP.cs" />
+    <Compile Include="Combat\Druid\Balance.cs" />
+    <Compile Include="Combat\Druid\Buffs.cs" />
+    <Compile Include="Combat\Druid\DruidBehavior.cs" />
+    <Compile Include="Combat\Druid\FeralCombat.cs" />
+    <Compile Include="Combat\Druid\HealOOC.cs" />
+    <Compile Include="Combat\Druid\LowLevel.cs" />
+    <Compile Include="Combat\Druid\Restoration.cs" />
+    <Compile Include="Combat\Hunter\BeastMastery.cs" />
+    <Compile Include="Combat\Hunter\Buffs.cs" />
+    <Compile Include="Combat\Hunter\HunterBehavior.cs" />
+    <Compile Include="Combat\Hunter\LowLevel.cs" />
+    <Compile Include="Combat\Hunter\Marksmanship.cs" />
+    <Compile Include="Combat\Hunter\PetHelper.cs" />
+    <Compile Include="Combat\Hunter\Survival.cs" />
+    <Compile Include="Combat\Mage\Arcane.cs" />
+    <Compile Include="Combat\Mage\Buffs.cs" />
+    <Compile Include="Combat\Mage\Fire.cs" />
+    <Compile Include="Combat\Mage\Frost.cs" />
+    <Compile Include="Combat\Mage\LowLevel.cs" />
+    <Compile Include="Combat\Mage\MageBehavior.cs" />
+    <Compile Include="Combat\Paladin\Buffs.cs" />
+    <Compile Include="Combat\Paladin\HealOOC.cs" />
+    <Compile Include="Combat\Paladin\Holy.cs" />
+    <Compile Include="Combat\Paladin\LowLevel.cs" />
+    <Compile Include="Combat\Paladin\PaladinBehavior.cs" />
+    <Compile Include="Combat\Paladin\Protection.cs" />
+    <Compile Include="Combat\Paladin\Retribution.cs" />
+    <Compile Include="Combat\Priest\Buffs.cs" />
+    <Compile Include="Combat\Priest\Holy.cs" />
+    <Compile Include="Combat\Priest\LowLevel.cs" />
+    <Compile Include="Combat\Priest\PriestBehavior.cs" />
+    <Compile Include="Combat\Priest\Shadow.cs" />
+    <Compile Include="Combat\Rogue\Combat.cs" />
+    <Compile Include="Combat\Rogue\LowLevel.cs" />
+    <Compile Include="Combat\Rogue\PoisonHelper.cs" />
+    <Compile Include="Combat\Rogue\RogueBehavior.cs" />
+    <Compile Include="Combat\Shaman\Buffs.cs" />
+    <Compile Include="Combat\Shaman\Elemental.cs" />
+    <Compile Include="Combat\Shaman\Enhancement.cs" />
+    <Compile Include="Combat\Shaman\HealOOC.cs" />
+    <Compile Include="Combat\Shaman\LowLevel.cs" />
+    <Compile Include="Combat\Shaman\Restoration.cs" />
+    <Compile Include="Combat\Shaman\ShamanBehavior.cs" />
+    <Compile Include="Combat\Shaman\Totems.cs" />
+    <Compile Include="Combat\Shaman\WeaponHelper.cs" />
+    <Compile Include="Combat\Warlock\Affliction.cs" />
+    <Compile Include="Combat\Warlock\Buffs.cs" />
+    <Compile Include="Combat\Warlock\Demonology.cs" />
+    <Compile Include="Combat\Warlock\Destruction.cs" />
+    <Compile Include="Combat\Warlock\LowLevel.cs" />
+    <Compile Include="Combat\Warlock\SpellstoneHelper.cs" />
+    <Compile Include="Combat\Warlock\WarlockBehavior.cs" />
+    <Compile Include="Combat\Warrior\Arms.cs" />
+    <Compile Include="Combat\Warrior\Buffs.cs" />
+    <Compile Include="Combat\Warrior\Fury.cs" />
+    <Compile Include="Combat\Warrior\LowLevel.cs" />
+    <Compile Include="Combat\Warrior\Protection.cs" />
+    <Compile Include="Combat\Warrior\WarriorBehavior.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Consumables.cs" />
+    <Compile Include="Costura\AssemblyLoader.cs" />
+    <Compile Include="Events\SyntheticEvents.cs" />
+    <Compile Include="Extension.cs" />
+    <Compile Include="Framework\CancelableSpell.cs" />
+    <Compile Include="Framework\Exclusive.cs" />
+    <Compile Include="Framework\Exclusives.cs" />
+    <Compile Include="Framework\Extensions.cs" />
+    <Compile Include="Framework\IRotationAction.cs" />
+    <Compile Include="Framework\RotationBuff.cs" />
+    <Compile Include="Framework\RotationCombatUtil.cs" />
+    <Compile Include="Framework\RotationFramework.cs" />
+    <Compile Include="Framework\RotationLogger.cs" />
+    <Compile Include="Framework\RotationSpell.cs" />
+    <Compile Include="Framework\RotationStep.cs" />
+    <Compile Include="FuncComp.cs" />
+    <Compile Include="Helpers\Caching\Cache.cs" />
+    <Compile Include="Helpers\Caching\Entry.cs" />
+    <Compile Include="Helpers\Caching\LuaCache.cs" />
+    <Compile Include="Helpers\CombatLogger.cs" />
+    <Compile Include="Helpers\DebugSpell.cs" />
+    <Compile Include="Helpers\Hotkeys.cs" />
+    <Compile Include="Helpers\RingBuffer.cs" />
+    <Compile Include="Helpers\StatisticEntry.cs" />
+    <Compile Include="ItemsHelper.cs" />
+    <Compile Include="Lists\ImportantDebuffList.cs" />
+    <Compile Include="Lists\LaggyTransports.cs" />
+    <Compile Include="Lists\SpecialSpells.cs" />
+    <Compile Include="MageFoodManager.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="PetManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RacialManager.cs" />
+    <Compile Include="Settings\BasePersistentSettings.cs" />
+    <Compile Include="Settings\BaseSettings.cs" />
+    <Compile Include="Settings\DeathKnightLevelSettings.cs" />
+    <Compile Include="Settings\DruidLevelSettings.cs" />
+    <Compile Include="Settings\HunterLevelSettings.cs" />
+    <Compile Include="Settings\MageLevelSettings.cs" />
+    <Compile Include="Settings\PaladinLevelSettings.cs" />
+    <Compile Include="Settings\PriestLevelSettings.cs" />
+    <Compile Include="Settings\RogueLevelSettings.cs" />
+    <Compile Include="Settings\ShamanLevelSettings.cs" />
+    <Compile Include="Settings\WarlockLevelSettings.cs" />
+    <Compile Include="Settings\WarriorLevelSettings.cs" />
+    <Compile Include="TalentsManager.cs" />
+    <Compile Include="TankManager.cs" />
+    <Compile Include="TrainerManager.cs" />
+    <Compile Include="Update.cs" />
+    <Compile Include="WarlockSpellstoneManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Costura\autoupdater\net\dll.compressed" />
+    <EmbeddedResource Include="Costura\autoupdater\net\pdb.compressed" />
+    <EmbeddedResource Include="Costura\costura\dll.compressed" />
+    <EmbeddedResource Include="Costura\costura\pdb.compressed" />
+    <EmbeddedResource Include="Costura\marssettingsgui\dll.compressed" />
+    <EmbeddedResource Include="Costura\metadata" />
+    <EmbeddedResource Include="Costura\system\buffers\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\diagnostics\diagnosticsource\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\memory\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\numerics\vectors\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\runtime\compilerservices\unsafe\dll.compressed" />
+    <EmbeddedResource Include="Costura\wmanager\dll.compressed" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
