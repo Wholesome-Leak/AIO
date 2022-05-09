@@ -188,49 +188,38 @@ public class Main : ICustomClass
 	// Token: 0x0600007A RID: 122 RVA: 0x00008B74 File Offset: 0x00006D74
 	public void Initialize()
 	{
-		Update.CheckUpdate();
-		Main.Log("Started 3.1.40 of FightClass");
-		Main.Log("Started 3.1.40 Discovering class and finding rotation...");
-		bool flag = Others.ParseInt(Information.Version.Replace(".", "").Substring(0, 3)) == 172;
-		if (flag)
+		EventsLuaWithArgs.OnEventsLuaStringWithArgs += new EventsLuaWithArgs.EventsLuaStringWithArgsHandler(this.ForceBindItem);
+		EventsLuaWithArgs.OnEventsLuaStringWithArgs += new EventsLuaWithArgs.EventsLuaStringWithArgsHandler(this.ForceStepBackward);
+		EventsLuaWithArgs.OnEventsLuaStringWithArgs += new EventsLuaWithArgs.EventsLuaStringWithArgsHandler(CancelableSpell.CastStopHandler);
+		EventsLuaWithArgs.OnEventsLuaStringWithArgs += new EventsLuaWithArgs.EventsLuaStringWithArgsHandler(CombatLogger.ParseCombatLog);
+		wManagerSetting.CurrentSetting.UseLuaToMove = true;
+		this.TokenRelativePositionFix = new CancellationTokenSource();
+		Task.Factory.StartNew(delegate ()
 		{
-			Main.Log("AIO couldn't load (v " + Information.Version + ")");
-		}
-		else
+			while (!this.TokenRelativePositionFix.IsCancellationRequested)
+			{
+				Main.FixRelativePositionLag();
+				Thread.Sleep(5000);
+			}
+		}, this.TokenRelativePositionFix.Token);
+		this.TokenKeyboardHook = new CancellationTokenSource();
+		Task.Factory.StartNew(delegate ()
 		{
-			EventsLuaWithArgs.OnEventsLuaStringWithArgs += new EventsLuaWithArgs.EventsLuaStringWithArgsHandler(this.ForceBindItem);
-			EventsLuaWithArgs.OnEventsLuaStringWithArgs += new EventsLuaWithArgs.EventsLuaStringWithArgsHandler(this.ForceStepBackward);
-			EventsLuaWithArgs.OnEventsLuaStringWithArgs += new EventsLuaWithArgs.EventsLuaStringWithArgsHandler(CancelableSpell.CastStopHandler);
-			EventsLuaWithArgs.OnEventsLuaStringWithArgs += new EventsLuaWithArgs.EventsLuaStringWithArgsHandler(CombatLogger.ParseCombatLog);
-			wManagerSetting.CurrentSetting.UseLuaToMove = true;
-			this.TokenRelativePositionFix = new CancellationTokenSource();
-			Task.Factory.StartNew(delegate()
+			while (!this.TokenKeyboardHook.IsCancellationRequested)
 			{
-				while (!this.TokenRelativePositionFix.IsCancellationRequested)
-				{
-					Main.FixRelativePositionLag();
-					Thread.Sleep(5000);
-				}
-			}, this.TokenRelativePositionFix.Token);
-			this.TokenKeyboardHook = new CancellationTokenSource();
-			Task.Factory.StartNew(delegate()
+				Hotkeys.CheckKeyPress();
+				Thread.Sleep(1000);
+			}
+		}, this.TokenKeyboardHook.Token);
+		BaseSettings combatSettings = Main.CombatSettings;
+		this.CombatClass = Main.LazyCombatClass;
+		this.Components.ForEach(delegate (ICycleable c)
+		{
+			if (c != null)
 			{
-				while (!this.TokenKeyboardHook.IsCancellationRequested)
-				{
-					Hotkeys.CheckKeyPress();
-					Thread.Sleep(1000);
-				}
-			}, this.TokenKeyboardHook.Token);
-			BaseSettings combatSettings = Main.CombatSettings;
-			this.CombatClass = Main.LazyCombatClass;
-			this.Components.ForEach(delegate(ICycleable c)
-			{
-				if (c != null)
-				{
-					c.Initialize();
-				}
-			});
-		}
+				c.Initialize();
+			}
+		});
 	}
 
 	// Token: 0x0600007B RID: 123 RVA: 0x00008CD4 File Offset: 0x00006ED4

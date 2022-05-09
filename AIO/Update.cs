@@ -15,7 +15,7 @@ public static class Update
 	{
 		try
 		{
-			string b = "3.1.40";
+			
 			string address = "https://github.com/Talamin/AIO-Release/raw/master/AIO.dll";
 			string address2 = "https://raw.githubusercontent.com/Talamin/AIO-Release/master/Version.txt";
 			string text = new WebClient
